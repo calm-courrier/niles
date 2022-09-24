@@ -1,4 +1,6 @@
 using Microsoft.Extensions.FileProviders;
+using NilesServer.Service;
+using NilesServer.Service.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<IConfigurationService, ConfigurationService>();
+builder.Services.AddSingleton<IDbProvider, DbProvider>();
 
 var app = builder.Build();
 

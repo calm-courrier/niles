@@ -7,7 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.AspNet.Cryptography.KeyDerivation" Version="1.0.0-rc1-final" />
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.0-rc.1.22426.7" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Data\Dao" />
+      <Folder Include="Data\Model" />
     </ItemGroup>
 
     <Target Name="NpmInstall" Inputs="../client/package.json" Outputs="../client/node_modules/.install-stamp">
